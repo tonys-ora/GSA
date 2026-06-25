@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "skystake-frontend",
+      "script": "npx",
+      "interpreter": "none",
+      "args": "npm start"
+    }
+  ]
+}

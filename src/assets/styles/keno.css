@@ -1,0 +1,158 @@
+.game-keno .game-history {
+  display: flex;
+  height: 84px;
+}
+
+.game-keno .history-keno {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 9px;
+  border-radius: 3px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.game-keno .history-keno div:first-child {
+  font-size: 13px;
+}
+
+.game-keno .history-keno div:last-child {
+  font-size: 11px;
+}
+
+.game-keno .theme--light .history-keno {
+  color: black !important;
+}
+
+.game-keno .game-content-keno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-keno .keno-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(8, 65px);
+  grid-template-rows: repeat(5, 65px);
+  grid-auto-flow: column;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+}
+
+.game-keno .keno-grid div {
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    top 0.3s ease,
+    border-color 0.3s ease;
+  position: relative;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.05);
+  border-top: 4px solid transparent;
+  border-radius: 2px 2px 3px 3px;
+}
+
+[data-mui-color-scheme='light'] .game-keno .keno-grid div {
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.05);
+}
+
+.game-keno .keno-grid div svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-keno .keno-grid div:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+  top: -2px;
+}
+
+.game-keno .keno-grid div span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.game-keno .keno-grid div.active {
+  background: #b71c1c !important;
+  border-bottom-color: #7f0000 !important;
+  color: white !important;
+}
+
+.game-keno .keno-grid div.selected {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+  border-bottom-color: transparent !important;
+  color: #e53935 !important;
+}
+
+[data-mui-color-scheme='light'] .game-keno .keno-grid div.selected {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-top-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.game-keno .keno-grid div.active.selected {
+  background: #b71c1c !important;
+  border-bottom-color: #7f0000 !important;
+  color: #bdbdbd !important;
+}
+
+.game-keno .keno-grid div.active.selected svg {
+  opacity: 1;
+}
+
+.game-keno .keno-grid div.active.selected span {
+  z-index: 10;
+  margin-top: -1px;
+}
+
+.game-keno .overview-render-target .keno-grid {
+  grid-template-columns: repeat(8, 35px);
+  grid-template-rows: repeat(5, 35px);
+  grid-gap: 7px;
+  transform: unset !important;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.game-keno .overview-render-target .keno-grid span {
+  font-size: 11px;
+}
+
+@media (max-width: 1370px) {
+  .game-keno .keno-grid {
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(5, 40px);
+    grid-gap: 5px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .game-keno .keno-grid {
+    grid-template-columns: repeat(8, 10vw);
+    grid-template-rows: repeat(5, 10vw);
+    grid-gap: 1.5vw;
+    font-size: 11px;
+  }
+  .game-keno .game-content-keno {
+    margin-bottom: 120px;
+  }
+}

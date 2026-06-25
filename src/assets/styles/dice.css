@@ -1,0 +1,63 @@
+.game-dice .slots {
+  position: absolute;
+  width: 515px;
+  height: 210px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-dice .slot-container {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.game-dice .slot {
+  display: inline-block;
+  width: 90px;
+  height: 100px;
+  text-align: center;
+  font-size: 7rem;
+  line-height: 100px;
+  overflow: hidden;
+  color: white;
+  font-family: 'Unlock' !important;
+}
+
+.game-dice .slot div {
+  font-family: 'Unlock' !important;
+}
+
+.game-dice .slots .target {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+  /* color: white; */
+}
+
+.game-dice .game-content-dice {
+  position: relative;
+  min-height: 350px !important;
+}
+
+@media (max-width: 750px) {
+  .game-dice .game-content-dice {
+    min-height: 200px !important;
+  }
+
+  .game-dice .slots {
+    transform: translate(-50%, -50%) scale(0.5) !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .game-dice .slots {
+    transform: translate(-50%, -50%) scale(0.4) !important;
+  }
+}

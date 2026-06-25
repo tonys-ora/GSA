@@ -1,0 +1,114 @@
+.game-diamonds .history-diamonds {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 115px;
+  width: 115px;
+}
+
+.game-diamonds .history-diamonds div {
+  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.game-diamonds .history-diamonds:last-child {
+  margin-right: 15px !important;
+}
+
+.game-diamonds .history-diamonds div.highlight {
+  color: white !important;
+}
+
+.game-diamonds .game-content-diamonds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-diamonds .diamonds-grid {
+  display: flex;
+}
+
+.game-diamonds .diamonds-grid [data-diamonds-slot] {
+  display: inline-flex;
+  width: 110px !important;
+  height: 60px !important;
+  margin-right: 5px !important;
+  border-radius: 3px;
+  position: relative;
+  background: #2d3748;
+  border-bottom: 15px solid #1a202c;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.game-diamonds .diamonds-grid [data-diamonds-slot] .shadow {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  width: 60%;
+  height: 40%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.game-diamonds .diamonds-grid [data-diamonds-slot]:last-child {
+  margin-right: 0;
+}
+
+.game-diamonds .diamonds-grid [data-diamonds-slot] img {
+  z-index: 1;
+  width: 100%;
+  height: 250%;
+  position: absolute;
+  top: -160%;
+}
+
+.game-diamonds [data-diamonds-slot].blue {
+  background: #4299e1 !important;
+  border-color: #2b6cb0 !important;
+}
+
+.game-diamonds [data-diamonds-slot].green {
+  background: #48bb78 !important;
+  border-color: #2f855a !important;
+}
+
+.game-diamonds [data-diamonds-slot].light_blue {
+  background: #63b3ed !important;
+  border-color: #3182ce !important;
+}
+
+.game-diamonds [data-diamonds-slot].pink {
+  background: #ed64a6 !important;
+  border-color: #b83280 !important;
+}
+
+.game-diamonds [data-diamonds-slot].purple {
+  background: #9f7aea !important;
+  border-color: #6b46c1 !important;
+}
+
+.game-diamonds [data-diamonds-slot].red {
+  background: #f56565 !important;
+  border-color: #c53030 !important;
+}
+
+.game-diamonds [data-diamonds-slot].yellow {
+  background: #ecc94b !important;
+  border-color: #b7791f !important;
+}
+
+.game-diamonds [data-diamonds-slot].dropShadow .shadow {
+  opacity: 1;
+}

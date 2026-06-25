@@ -1,0 +1,490 @@
+@font-face {
+  font-family: Unlock;
+  src: url(../fonts/Unlock-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+.game-limbo {
+  width: 100%;
+  height: 100%;
+}
+
+.game-limbo .bg-star {
+  height: 9.375rem;
+  background: url(../games/limbo/star.png) no-repeat 20px -20px;
+  background-size: 100% auto;
+}
+
+@keyframes star-fall {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) translate(0);
+    transform: scale(0.5) translate(0);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translate(-200px, 200px);
+    transform: translate(-200px, 200px);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1.2) translate(-300px, 300px);
+    transform: scale(1.2) translate(-300px, 300px);
+  }
+}
+
+.game-limbo .bg-star.show-1 .e-r {
+  -webkit-animation: star-fall 5s linear;
+  animation: star-fall 5s linear;
+}
+
+.game-limbo .bg-star.show-2 .s-p {
+  -webkit-animation: star-fall 8s linear;
+  animation: star-fall 8s linear;
+}
+
+.game-limbo .bg-star.show-3 .r-p {
+  -webkit-animation: star-fall 7s linear;
+  animation: star-fall 7s linear;
+}
+
+.game-limbo .bg-star .l-star {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  left: 90%;
+  width: 1px;
+  background: transparent;
+}
+
+.game-limbo .bg-star .l-star:after {
+  content: ' ';
+  display: block;
+  border: 1px solid white;
+  border-width: 0 20px 2px 50px;
+  left: 5px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-color: transparent transparent transparent #f5f5f5;
+}
+
+.game-limbo .bg-star .l-star.s-p {
+  left: 30%;
+}
+
+.game-limbo .bg-star .l-star.s-p:after {
+  border-width: 0 10px 2px 25px;
+}
+
+.game-limbo .bg-star .l-star.r-p {
+  left: 45%;
+}
+
+.game-limbo .bg-star .l-star.r-p:after {
+  border-width: 0 15px 2px 30px;
+}
+
+.game-limbo .game-rocket {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 5rem;
+  bottom: 0;
+}
+
+.game-limbo .game-rocket .rocket-number {
+  text-align: center;
+  margin-top: 1.25rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  position: relative;
+  font-size: 4.6875rem;
+  white-space: nowrap;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes boom {
+  0% {
+    opacity: 0;
+  }
+  48% {
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  52% {
+    background-position: 0 -15.6875rem;
+  }
+  56% {
+    background-position: 0 -31.375rem;
+  }
+  60% {
+    background-position: 0 -47.0625rem;
+  }
+  64% {
+    background-position: 0 -62.75rem;
+  }
+  68% {
+    background-position: 0 -78.4375rem;
+  }
+  72% {
+    background-position: 0 -94.125rem;
+  }
+  76% {
+    background-position: 0 -109.8125rem;
+    opacity: 1;
+  }
+  80% {
+    background-position: 0 -125.5rem;
+  }
+  84% {
+    background-position: 0 -141.1875rem;
+  }
+  88% {
+    background-position: 0 -156.875rem;
+  }
+  92% {
+    background-position: 0 -172.5625rem;
+  }
+  96% {
+    background-position: 0 -188.25rem;
+  }
+  to {
+    background-position: 0 -203.9375rem;
+    opacity: 0;
+  }
+}
+
+.game-limbo .rocket-payout,
+.game-limbo .counter {
+  transition: color 0.3s ease;
+  font-family: Unlock;
+  font-size: 7rem;
+}
+
+.game-limbo .game-rocket .rocket-number .rocket-boom {
+  width: 16.25rem;
+  height: 15.0625rem;
+  background: url(../games/limbo/boom.png) no-repeat;
+  background-size: 100% auto;
+  opacity: 0;
+  background-position: 0 0;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -8.125rem;
+  margin-top: -7.5rem;
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.game-limbo .game-rocket .rocket-number .rocket-boom.boom {
+  -webkit-animation: boom 0.4s steps(1);
+  animation: boom 0.4s steps(1);
+}
+
+.game-limbo .game-rocket .rocket-wrap {
+  width: 6.25rem;
+  margin: 0 auto;
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3.125rem;
+}
+
+.game-limbo .game-rocket .rocket-wrap .rocket-img {
+  margin: 0 auto;
+  height: 10.3125rem;
+  position: relative;
+  top: 3.125rem;
+}
+
+@keyframes rocketanimate {
+  0% {
+    left: 0.3125rem;
+    top: 0.1875rem;
+  }
+  10% {
+    left: 0.1875rem;
+    top: 0.25rem;
+  }
+  20% {
+    left: -0.0625rem;
+    top: 0.0625rem;
+  }
+  30% {
+    left: -0.1875rem;
+    top: 0.125rem;
+  }
+  40% {
+    left: 0.25rem;
+    top: 0.3125rem;
+  }
+  50% {
+    left: -0.125rem;
+    top: 0;
+  }
+  60% {
+    left: 0.1875rem;
+    top: 0.125rem;
+  }
+  70% {
+    left: 0.0625rem;
+    top: 0.25rem;
+  }
+  80% {
+    left: -0.0625rem;
+    top: 0.0625rem;
+  }
+  90% {
+    left: -0.125rem;
+    top: 0.1875rem;
+  }
+  to {
+    left: 0.1875rem;
+    top: 0.3125rem;
+  }
+}
+
+.game-limbo .game-rocket .rocket-wrap .rocket-img img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+@keyframes fireanimate {
+  0% {
+    background-position: 0 0;
+  }
+  5% {
+    background-position: 0 -6.4375rem;
+  }
+  10% {
+    background-position: 0 -12.875rem;
+  }
+  15% {
+    background-position: 0 -19.3125rem;
+  }
+  20% {
+    background-position: 0 -25.75rem;
+  }
+  25% {
+    background-position: 0 -32.1875rem;
+  }
+  30% {
+    background-position: 0 -38.625rem;
+  }
+  35% {
+    background-position: 0 -45.0625rem;
+  }
+  40% {
+    background-position: 0 -51.5rem;
+  }
+  45% {
+    background-position: 0 -57.9375rem;
+  }
+  50% {
+    background-position: 0 -64.375rem;
+  }
+  55% {
+    background-position: 0 -70.8125rem;
+  }
+  60% {
+    background-position: 0 -64.375rem;
+  }
+  65% {
+    background-position: 0 -57.9375rem;
+  }
+  70% {
+    background-position: 0 -51.5rem;
+  }
+  75% {
+    background-position: 0 -45.0625rem;
+  }
+  80% {
+    background-position: 0 -38.625rem;
+  }
+  85% {
+    background-position: 0 -32.1875rem;
+  }
+  90% {
+    background-position: 0 -25.75rem;
+  }
+  95% {
+    background-position: 0 -19.3125rem;
+  }
+  98% {
+    background-position: 0 -12.875rem;
+  }
+  to {
+    background-position: 0 -6.4375rem;
+  }
+}
+
+.game-limbo .game-rocket .rocket-wrap .rocket-fire {
+  margin: -3.75rem auto 0;
+  opacity: 0;
+  width: 5.0625rem;
+  height: 6rem;
+  background: url(../games/limbo/fire.png) no-repeat;
+  background-size: 100% auto;
+  background-position: 0 0;
+}
+
+.game-limbo .game-rocket .rocket-wrap.fire .rocket-img {
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  top: 0;
+}
+
+.game-limbo .game-rocket .rocket-wrap.fire .rocket-img img {
+  -webkit-animation: rocketanimate 1s linear infinite;
+  animation: rocketanimate 1s linear infinite;
+}
+
+.game-limbo .game-rocket .rocket-wrap.fire .rocket-fire {
+  opacity: 1;
+  -webkit-animation: fireanimate 0.7s steps(1) infinite;
+  animation: fireanimate 0.7s steps(1) infinite;
+}
+
+.game-limbo .game-rocket .rocket-wrap.flying {
+  bottom: 30%;
+  -webkit-transition: bottom 0.2s ease-in;
+  transition: bottom 0.2s ease-in;
+}
+
+.game-limbo .game-rocket .rocket-wrap.flying .rocket-img {
+  top: 0;
+}
+
+.game-limbo .game-rocket .rocket-wrap.flying .rocket-fire {
+  opacity: 1;
+  -webkit-animation: fireanimate 0.7s steps(1) infinite;
+  animation: fireanimate 0.7s steps(1) infinite;
+}
+
+.game-limbo .game-rocket .rocket-wrap.boom {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.game-limbo .game-rocket .rocket-wrap.boom .rocket-img {
+  top: 0;
+}
+
+@media screen and (max-width: 621px) {
+  .game-limbo .game-rocket .rocket-number {
+    font-size: 4.0625rem;
+  }
+  .game-limbo .game-rocket .rocket-wrap {
+    width: 5rem;
+    margin-left: -2.5rem;
+  }
+  .game-limbo .game-rocket .rocket-wrap .rocket-fire {
+    margin-top: -5.625rem;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+.game-limbo .limbo-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.game-limbo .cloud {
+  position: absolute;
+  width: 6.25rem;
+  bottom: 7.5rem;
+  left: 0.625rem;
+}
+
+.game-limbo .cloud-d {
+  width: 4.375rem;
+  left: 25%;
+  bottom: 8.75rem;
+}
+
+.game-limbo .cloud-v {
+  width: 6.25rem;
+  left: 50%;
+}
+
+.game-limbo .cloud-g {
+  width: 4.375rem;
+  left: 80%;
+  bottom: 8.75rem;
+}
+
+@media (max-width: 767px) {
+  .game-limbo .limbo-game-canvas {
+    min-height: 21.875rem;
+  }
+  .game-limbo .cloud {
+    width: 3.125rem;
+    left: 1.25rem;
+  }
+  .game-limbo .cloud-d {
+    width: 2.1875rem;
+    left: 25%;
+  }
+  .game-limbo .cloud-v {
+    width: 3.125rem;
+    left: 65%;
+  }
+  .game-limbo .cloud-g {
+    width: 2.1875rem;
+    left: 85%;
+  }
+}
+
+.game-limbo .game-content-limbo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-limbo .game-content-limbo .limbo-canvas {
+  min-height: 25rem;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.game-limbo .game-content-limbo .result-mul {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 10em;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .game-limbo .game-content-limbo .result-mul {
+    font-size: 5em;
+    margin-bottom: 15px;
+  }
+}
+
+.text-danger {
+  color: #cf202e;
+}
+
+.text-success {
+  color: #0db1a0;
+}
