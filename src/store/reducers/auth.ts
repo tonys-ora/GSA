@@ -7,7 +7,6 @@ const initialState: AuthState = {
   chatRoomOpen: false,
   user: null,
   token: null,
-  balance: null
 }
 
 const authSlice = createSlice({
@@ -30,17 +29,6 @@ const authSlice = createSlice({
         state.user = { ...state.user, ...action.payload }
       }
     },
-    updateBalance(state, action: PayloadAction<AuthState['balance']>) {
-      if (state.isLoggedIn) {
-        if (state.user) {
-          state.user.balances = {
-            ...state.user?.balances,
-            [state.user?.activeCurrency || '']: action.payload?.balance || 0
-          }
-        }
-        state.balance = action.payload
-      }
-    },
     setChatRoom(state, action) {
       state.chatRoomOpen = action.payload
     }
@@ -49,4 +37,4 @@ const authSlice = createSlice({
 
 export default authSlice.reducer
 
-export const { login, logout, updateUser, updateBalance, setChatRoom } = authSlice.actions
+export const { login, logout, updateUser, setChatRoom } = authSlice.actions

@@ -38,6 +38,3 @@ export const useDispatch = () => useAppDispatch<AppDispatch>()
 export const useSelector: TypedUseSelectorHook<RootState> = useAppSelector
 
 export * from './reducers/auth'
-export * from './reducers/game'
-export * from './reducers/setting'
-export * from './reducers/sports'
