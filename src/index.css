@@ -29,15 +29,6 @@
   font-family: 'Nunito', sans-serif;
 }
 
-.crash-game-chart-inner {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100px;
-  height: 293px;
-  background: url(./assets/games/crash/chart.webp) 0 100% / auto 100% no-repeat;
-}
-
 .loading .logo {
   position: absolute;
   left: calc(50% - 76px);
