@@ -68,29 +68,30 @@ const defaultTheme = createTheme()
 
 export const colors = {
   prime: '#0DB1A0',
-  grey: '#868A92',
-  red: '#CF202E',
+  grey: '#797979',
+  red: '#E24744',
   orange: '#F7931A',
-  green: '#36FF00',
+  green: '#26BE07',
   gradient: 'linear-gradient(180deg, #0DB1A0 0%, #026056 100%)',
   gradient2: 'linear-gradient(180deg, #FFF6A3 0%, #FF9361 100%)',
   gradient3: 'linear-gradient(0deg, #FFD700 0%, #EE9500 100%)',
   gradientSuccess: 'linear-gradient(180deg, #34A853 0%, #067524 100%)',
   gradientSidebarLight: 'linear-gradient(90deg, rgba(255, 215, 0, 0) 18.49%, rgba(240, 154, 1, 0.32) 100%)',
   gradientSidebarDark: 'linear-gradient(90deg, rgba(11, 206, 185, 0) 0%, rgba(11, 206, 185, 0.12) 100%)',
-  bgLight: '#FAFBFC',
-  border: '#E8EDF3',
+  bgLight: '#FBFBFB',
+  border: '#ECECEC',
   white: '#ffffff',
-  bgDark: '#0E1525',
-  dark: '#0E1525',
+  bgDark: '#19191B',
+  dark: '#1D1D1F',
+  borderGray: '#D6D6D6',
   borderDark: '#202636',
   layer1Dark: '#171D2D',
   layer2Dark: '#1B2131',
   mutedLavender: '#3B5998',
   greenBhabua: '#C8F558',
   purpleEmperor: '#673AB7',
-  greyDark: '#868A92',
-  greyLight: '#F4F5F5',
+  greyDark: '#797979',
+  greyLight: '#F1F1F1',
   nimbusCloud: '#C7C9CD',
   transparent: 'transparent',
   cedarChest: '#CA5A4B',
@@ -175,14 +176,14 @@ export const colorSchemes = {
   light: {
     palette: {
       primary: {
-        light: brand[200],
-        main: colors.prime,
+        light:  '#FBFBFB',
+        main: colors.red,
         dark: brand[700],
-        contrastText: brand[50]
+        contrastText: colors.red
       },
       secondary: {
-        main: colors.grey
-      },
+        main: colors.greyLight 
+      }, 
       info: {
         light: brand[100],
         main: brand[300],
@@ -208,15 +209,15 @@ export const colorSchemes = {
         main: colors.grey,
         ...gray
       },
-      divider: alpha(gray[300], 0.4),
+      divider: colors.border,
       background: {
         default: colors.bgLight,
         paper: colors.white
       },
       text: {
-        primary: gray[800],
-        secondary: gray[600],
-        warning: orange[400]
+        primary: '#1D1D1F',
+        secondary: '#797979',
+        warning: colors.red
       },
       action: {
         hover: alpha(gray[200], 0.2),
@@ -280,50 +281,59 @@ export const colorSchemes = {
 }
 
 export const typography = {
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: '"SF Pro Display", sans-serif',
   h1: {
-    fontSize: defaultTheme.typography.pxToRem(40),
-    fontWeight: 600,
-    lineHeight: 1.2,
-    letterSpacing: -0.5
+    fontSize: defaultTheme.typography.pxToRem(50),
+    fontWeight: 700,
+    lineHeight: 1,
+    letterSpacing: 0
   },
   h2: {
-    fontSize: defaultTheme.typography.pxToRem(32),
-    fontWeight: 600,
-    lineHeight: 1.2
+    fontSize: defaultTheme.typography.pxToRem(70),
+    fontWeight: 700,
+    lineHeight: '80px',
+    letterSpacing: '-1.44px'
   },
   h3: {
-    fontSize: defaultTheme.typography.pxToRem(32),
-    fontWeight: 600,
-    lineHeight: 1.2
+    fontSize: defaultTheme.typography.pxToRem(50),
+    fontWeight: 700,
+    lineHeight: 1,
+    letterSpacing: 0
   },
   h4: {
-    fontSize: defaultTheme.typography.pxToRem(24),
-    fontWeight: 600,
-    lineHeight: 1.5
+    fontSize: defaultTheme.typography.pxToRem(50),
+    fontWeight: 700,
+    lineHeight: '80px',
+    letterSpacing: '-1.44px'
   },
   h5: {
-    fontSize: defaultTheme.typography.pxToRem(20),
-    fontWeight: 600
+    fontSize: defaultTheme.typography.pxToRem(32),
+    fontWeight: 700,
+    lineHeight: '40px',
+    letterSpacing: 0
   },
   h6: {
-    fontSize: defaultTheme.typography.pxToRem(18),
-    fontWeight: 600
+    fontSize: defaultTheme.typography.pxToRem(24),
+    fontWeight: 600,
+    lineHeight: '32px' 
   },
   subtitle1: {
-    fontSize: defaultTheme.typography.pxToRem(16),
-    fontWeight: 600
+    fontSize: defaultTheme.typography.pxToRem(20),
+    fontWeight: 600,
+    lineHeight: '30px'
   },
   subtitle2: {
     fontSize: defaultTheme.typography.pxToRem(14),
-    fontWeight: 500
+    fontWeight: 600,
+    lineHeight: '20px'
   },
   body1: {
-    fontSize: defaultTheme.typography.pxToRem(14)
+    fontSize: defaultTheme.typography.pxToRem(14),
+    fontWeight: 500
   },
   body2: {
     fontSize: defaultTheme.typography.pxToRem(14),
-    fontWeight: 400
+    fontWeight: 400 
   },
   caption: {
     fontSize: defaultTheme.typography.pxToRem(12),

@@ -1,7 +1,17 @@
+import Submission from '@/pages/Submission'
+import CreateSubmission from '@/pages/Submission/Create'
 
 export const MainRoutes = [
   {
     path: '/',
-    element: <h1> This is content </h1>
+    element: <Submission />
+  },
+  {
+    path: '/submission',
+    element: <Submission />
+  },
+  {
+    path: '/submission/new',
+    element: <CreateSubmission />
   }
 ]

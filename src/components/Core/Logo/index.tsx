@@ -22,9 +22,9 @@ const Logo = ({ fullWidth }: { fullWidth?: boolean }) => {
     }
 
     return {
-      src: '/logo-mobile.svg',
-      width: '25px',
-      height: '25px',
+      src: '/logo.png',
+      width: '71px',
+      height: '20px',
       alt: 'Mobile Company Logo'
     }
   }, [isTablet, theme.palette.mode, fullWidth])

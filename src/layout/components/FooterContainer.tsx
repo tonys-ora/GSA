@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles'
 
 import { colors } from '@/theme'
 
-export const HeaderContainer = styled('header', {
+export const FooterContainer = styled('footer', {
   shouldForwardProp: prop => prop !== 'sideWidth'
 })(({ theme }) => ({
   display: 'flex',
@@ -13,8 +13,8 @@ export const HeaderContainer = styled('header', {
   zIndex: 100,
   transition: 'background 0.3s ease-in-out, right 0.3s ease-in-out, width 0.3s ease-in-out',
   background: colors.white,
-  borderBottom: `1px solid ${colors.border}`,
   width: '100%',
+  bottom: 0,
   
   [theme.breakpoints.up('sm')]: {
     maxWidth: '100%',
@@ -27,6 +27,5 @@ export const HeaderContainer = styled('header', {
 
   ...theme.applyStyles('dark', {
     background: colors.bgDark,
-    borderBottom: `1px solid ${colors.borderDark}`
   })
 }))

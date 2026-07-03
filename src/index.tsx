@@ -19,7 +19,7 @@ const rootElement = document.getElementById('root')
 const root = ReactDOM.createRoot(rootElement!)
 
 root.render(
-  <StrictMode>
+  // <StrictMode>
     <StyledEngineProvider injectFirst>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persister}>
@@ -29,7 +29,7 @@ root.render(
         </PersistGate>
       </Provider>
     </StyledEngineProvider>
-  </StrictMode>
+  // </StrictMode>
 )
 
 reportWebVitals()
