@@ -18,22 +18,26 @@ export default function CreateSubmission() {
       <Stack>
         <StyledStepper />
         <Container>
-          <Stack direction='row' margin={'24px 50px'} gap={'30px'}>
+          {
+            currentStep === 5 
+            ?
+            Submissions[currentStep]
+            :<Stack direction='row' margin={'24px 50px'} gap={'30px'}>
+              <Stack gap={'32px'} flexGrow={1}>
 
-            <Stack gap={'32px'} flexGrow={1}>
+                <Typography variant='h5'>
+                  Create Submission
+                </Typography>
+                {Submissions[currentStep]}
 
-              <Typography variant='h5'>
-                Create Submission
-              </Typography>
-              {Submissions[currentStep]}
+              </Stack>
+              
+              <Stack>
+                <Summary />
+              </Stack>
 
             </Stack>
-            
-            <Stack>
-              <Summary />
-            </Stack>
-
-          </Stack>
+          }
         </Container>
       </Stack>
     </>

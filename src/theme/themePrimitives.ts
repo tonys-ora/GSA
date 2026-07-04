@@ -313,14 +313,14 @@ export const typography = {
     letterSpacing: 0
   },
   h6: {
-    fontSize: defaultTheme.typography.pxToRem(24),
-    fontWeight: 600,
-    lineHeight: '32px' 
-  },
-  subtitle1: {
     fontSize: defaultTheme.typography.pxToRem(20),
     fontWeight: 600,
     lineHeight: '30px'
+  },
+  subtitle1: {
+    fontSize: defaultTheme.typography.pxToRem(16),
+    fontWeight: 600,
+    lineHeight: '24px'
   },
   subtitle2: {
     fontSize: defaultTheme.typography.pxToRem(14),

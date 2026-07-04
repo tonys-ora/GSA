@@ -6,7 +6,6 @@ import { goNextStep, goPrevStep, dispatch } from '@/store'
 export default function Confirmation() {
   
   const handleContinue = useCallback(() => {
-    dispatch(goNextStep())
   }, [])
   const handleBack = useCallback(() => {
     dispatch(goPrevStep())
@@ -17,7 +16,7 @@ export default function Confirmation() {
     <Stack gap={'24px'}>
 
       <Stack gap={'4px'}>
-        <Typography variant='subtitle1'>
+        <Typography variant='h6'>
           Add Your Items
         </Typography>
         <Typography variant='body1' color='grey'>
@@ -41,10 +40,9 @@ export default function Confirmation() {
         color='primary' 
         variant='contained' 
         sx={{padding: '10px 24px'}}
-        onClick={handleContinue}
       >
         <Typography variant='body2'>
-          Continue
+          Confirm Order
         </Typography>
       </Button>
     </Stack>

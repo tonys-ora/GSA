@@ -26,7 +26,7 @@ export default function index({
   return (
     <Stack gap={'16px'} width={'100%'}>
       <Stack gap={'4px'}>
-        <Typography variant='subtitle1'>
+        <Typography variant='h6'>
           {title}
         </Typography>
         <Typography variant='body1' color='gray'>

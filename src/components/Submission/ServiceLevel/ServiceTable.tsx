@@ -1,17 +1,25 @@
 import React from 'react'
-import { styled, Stack, Typography } from '@mui/material';
+import { styled, Stack, Typography, Box } from '@mui/material';
 
-import { serviceTableHeader } from '@/constants';
+import { Services } from '@/constants';
+import { useSummary } from '@/hooks';
+
+import RadioService from './RadioService';
 
 const HeaderText = styled(Typography)({
   WebkitBackgroundClip: 'text',
   fontSize: '12px',
   fontWeight: 500,
   lineHeight: '20px',
-  color: 'secondary'
+  color: '#797979',
+  alignContent: 'center'
 });
 
 export function ServiceTable() {
+  const summary = useSummary()
+
+  console.log(summary)
+
   return (
     <Stack 
       sx={{
@@ -27,12 +35,32 @@ export function ServiceTable() {
           gap: '8px'
         }}
         >
-        {
-          serviceTableHeader.map((val) => (
-            <HeaderText>{val.title}</HeaderText>
-          ))
-         }
+        <Box flexGrow={1} textAlign={'center'}>
+          <HeaderText>Service Level</HeaderText>
+        </Box>
+        <Box  width={100} textAlign={'center'}>
+        <HeaderText>Min cards/sub</HeaderText>
+        </Box>
+        <Box  width={100} textAlign={'center'}>
+        <HeaderText>Turnaround</HeaderText>
+        </Box>
+        <Box width={60} textAlign={'center'}>
+        <HeaderText>Price</HeaderText>
+        </Box>
       </Stack>
+      
+      {
+        Services.map((val) => (
+          <RadioService 
+            key={val.level} 
+            {...val} 
+            checked={val.level === summary.gradingService}
+          />
+        ))
+      }
+      <Typography variant='body1' color='gray' component='span'>
+        Join <Box component='span' color='#E24744'>membership & points program</Box> for more benefits
+      </Typography>
     </Stack>
   )
 }

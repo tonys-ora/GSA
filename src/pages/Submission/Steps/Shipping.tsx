@@ -1,10 +1,16 @@
-import React, { useState, useCallback } from 'react'
-import { Stack, Typography, Button, StepConnector, Box } from '@mui/material'
+import React, { useCallback } from 'react'
+import { Stack, Typography, Button, Divider} from '@mui/material'
 
+import ShippingAddresses from '@/components/Submission/Shipping/ShippingAddresses'
+import ShippingMethods from '@/components/Submission/Shipping/ShippingMethods'
+import ShippingPaymentAccount from '@/components/Submission/Shipping/ShippingPaymentAccount'
 import { goNextStep, goPrevStep, dispatch } from '@/store'
+import { useSummary } from '@/hooks'
 
 export default function Shipping() {
   
+  const summary = useSummary()
+
   const handleContinue = useCallback(() => {
     dispatch(goNextStep())
   }, [])
@@ -16,7 +22,7 @@ export default function Shipping() {
     <Stack gap={'24px'}>
 
       <Stack gap={'4px'}>
-        <Typography variant='subtitle1'>
+        <Typography variant='h6'>
           Return Shipping
         </Typography>
         <Typography variant='body1' color='grey'>
@@ -24,6 +30,15 @@ export default function Shipping() {
         </Typography>
       </Stack>
 
+      {/* section1 */}
+      <ShippingAddresses />
+      <Divider />
+      <ShippingMethods />
+      <Divider />
+      <ShippingPaymentAccount />
+
+
+    {/* buttons */}
       <Stack direction='row' justifyContent={'space-between'}>
         <Button 
           color='secondary' 
@@ -41,9 +56,10 @@ export default function Shipping() {
           variant='contained' 
           sx={{padding: '10px 24px'}}
           onClick={handleContinue}
+          disabled={!summary.shippingAddress || !summary.shippingMethod || !summary.shippingPaymentAccount}
         >
           <Typography variant='body2'>
-            Continue
+            Proceed to Checkout
           </Typography>
         </Button>
       </Stack>

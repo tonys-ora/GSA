@@ -71,7 +71,7 @@ export const customizations: Components<Theme> = {
             style: {
               color: colors.dark,
               backgroundColor: colors.grey,
-              padding: '10px 16px'
+              padding: '10px 24px'
             }
           }
         ]
@@ -141,7 +141,7 @@ export const customizations: Components<Theme> = {
           gap: 16,
           transition: 'all 100ms ease',
           backgroundColor: colors.white,
-          borderRadius: theme.shape.borderRadius,
+          borderRadius: '16px',
           border: `1px solid ${theme.palette.divider}`,
           boxShadow: 'none',
           ...theme.applyStyles('dark', {
@@ -198,6 +198,15 @@ export const customizations: Components<Theme> = {
             backgroundColor: '#E2474414',
           },
         }
+      }
+    }
+  },
+  MuiRadio: {
+    styleOverrides: {
+      root: {
+        '& .MuiSvgIcon-root': {
+          fontSize: '18px', // Sets the radio circle/dot to 20px
+        },
       }
     }
   }

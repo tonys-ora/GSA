@@ -10,8 +10,11 @@ import {
 
 import { SearchBar } from '@/components/Core/SearchBar'
 import { goNextStep, goPrevStep, dispatch } from '@/store'
+import { useSummary } from '@/hooks'
 
 export default function AddItems() {
+
+  const summary = useSummary()
   
   const handleContinue = useCallback(() => {
     dispatch(goNextStep())
@@ -24,7 +27,7 @@ export default function AddItems() {
     <Stack gap={'24px'}>
 
       <Stack gap={'4px'}>
-        <Typography variant='subtitle1'>
+        <Typography variant='h6'>
           Add Your Items
         </Typography>
         <Typography variant='body1' color='grey'>
@@ -69,6 +72,7 @@ export default function AddItems() {
           color='primary' 
           variant='contained' 
           sx={{padding: '10px 24px'}}
+          // disabled={!summary.cardAmount}
           onClick={handleContinue}
         >
           <Typography variant='body2'>

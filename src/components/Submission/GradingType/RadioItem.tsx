@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 
 import AppIcon from "@/components/Core/AppIcon"
-import { RadioItemType } from "@/types/Submission/GradingType"
+import { RadioItemType } from "@/types/Submission"
 import { updateItemType, dispatch } from '@/store'
 
 

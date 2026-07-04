@@ -18,7 +18,7 @@ export default function GardingType() {
     <Stack gap={'24px'}>
 
       <Stack gap={'4px'}>
-        <Typography variant='subtitle1'>
+        <Typography variant='h6'>
           Select Item Type
         </Typography>
         <Typography variant='body1' color='grey'>
@@ -32,7 +32,7 @@ export default function GardingType() {
             <RadioItem 
             key={value.title} 
             {...value} 
-            checked={value.title===summary.itemType.value} 
+            checked={value.title===summary.itemType} 
             />
           ))
         }

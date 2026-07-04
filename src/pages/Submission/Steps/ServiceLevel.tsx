@@ -3,6 +3,7 @@ import { Stack, Typography, Button} from '@mui/material'
 
 import { ServiceTable } from '@/components/Submission/ServiceLevel'
 import { goNextStep, goPrevStep, dispatch } from '@/store'
+import { useSummary } from '@/hooks'
 
 export default function ServiceLevel() {
   
@@ -18,7 +19,7 @@ export default function ServiceLevel() {
       <Stack gap={'24px'}>
 
         <Stack gap={'4px'}>
-          <Typography variant='subtitle1'>
+          <Typography variant='h6'>
             Select Service Program
           </Typography>
           <Typography variant='body1' color='grey'>
@@ -47,6 +48,7 @@ export default function ServiceLevel() {
           variant='contained' 
           sx={{padding: '10px 24px'}}
           onClick={handleContinue}
+          disabled={!useSummary().gradingService}
         >
           <Typography variant='body2'>
             Continue
