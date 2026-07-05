@@ -178,6 +178,10 @@ export const shippingPaymentAccounts: PaymentAccountType[] = [
 
 export const SummaryConst = {
   currentStep: {
+    title: 'step',
+    prefix: ''
+  },
+  itemType: {
     title: 'Grading type',
     prefix: ''
   },

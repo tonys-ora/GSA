@@ -2,12 +2,13 @@ import React, { useCallback } from 'react'
 import { Stack, Typography, Button} from '@mui/material'
 
 import { ServiceTable } from '@/components/Submission/ServiceLevel'
-import { goNextStep, goPrevStep, dispatch } from '@/store'
+import { showSummary, goNextStep, goPrevStep, dispatch } from '@/store'
 import { useSummary } from '@/hooks'
 
 export default function ServiceLevel() {
   
   const handleContinue = useCallback(() => {
+    dispatch(showSummary())
     dispatch(goNextStep())
   }, [])
   const handleBack = useCallback(() => {

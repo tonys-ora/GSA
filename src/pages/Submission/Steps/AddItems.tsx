@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 
 import { SearchBar } from '@/components/Core/SearchBar'
-import { goNextStep, goPrevStep, dispatch } from '@/store'
+import {updateItems, goNextStep, goPrevStep, dispatch } from '@/store'
 import { useSummary } from '@/hooks'
 
 export default function AddItems() {
@@ -17,6 +17,7 @@ export default function AddItems() {
   const summary = useSummary()
   
   const handleContinue = useCallback(() => {
+    dispatch(updateItems({cardAmount: 0, totalValue: 0}))
     dispatch(goNextStep())
   }, [])
   const handleBack = useCallback(() => {

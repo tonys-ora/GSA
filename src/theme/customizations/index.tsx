@@ -73,7 +73,33 @@ export const customizations: Components<Theme> = {
               backgroundColor: colors.grey,
               padding: '10px 24px'
             }
-          }
+          },
+          {
+            props: {
+              color: 'error',
+              variant: 'contained'
+            },
+            style: {
+              color: colors.white,
+              backgroundColor: colors.dark,
+              border: `1px solid ${colors.border}`,
+              padding: '10px 24px',
+              lineHeight: '20px'
+            }
+          },
+          {
+            props: {
+              color: 'info',
+              variant: 'contained'
+            },
+            style: {
+              color: colors.dark,
+              backgroundColor: colors.greyLight,
+              border: `1px solid ${colors.border}`,
+              padding: '8px',
+              minWidth: 'auto'
+            }
+          },
         ]
       })
     }

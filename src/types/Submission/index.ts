@@ -8,10 +8,11 @@ export interface SubmissionState {
   totalValue :  number | null, 
   gradingService: ServiceLevelType | null, 
   gradingFee: number | null, 
-  showDiv1: boolean,
   shippingAddress: string | null,
   shippingMethod: string | null,
   shippingPaymentAccount: string | null,
+  shippingCost: number | null,
+  showDiv1: boolean,
   showDiv2: boolean
 }
 

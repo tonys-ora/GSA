@@ -17,7 +17,7 @@ const RadioMethod = ({
  return (
   <Card sx={{width: '100%'}}>
     <CardActionArea
-      onClick={() => dispatch(updateShippingMethod({method: method}))}
+      onClick={() => dispatch(updateShippingMethod({method: method, price: price}))}
       data-active={checked ? '' : undefined}
       sx={{
         height: '100%',
