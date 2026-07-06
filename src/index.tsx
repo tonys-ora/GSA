@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 
@@ -20,15 +19,15 @@ const root = ReactDOM.createRoot(rootElement!)
 
 root.render(
   // <StrictMode>
-    <StyledEngineProvider injectFirst>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persister}>
-          <AppTheme>
-            <App />
-          </AppTheme>
-        </PersistGate>
-      </Provider>
-    </StyledEngineProvider>
+  <StyledEngineProvider injectFirst>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persister}>
+        <AppTheme>
+          <App />
+        </AppTheme>
+      </PersistGate>
+    </Provider>
+  </StyledEngineProvider>
   // </StrictMode>
 )
 

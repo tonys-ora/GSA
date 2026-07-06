@@ -5,15 +5,15 @@ import { ItemType } from '@/types/Submission/GradingType'
 
 const initialState: SubmissionState = {
   currentStep: 0,
-  itemType: null,
-  cardAmount : null,
-  totalValue : null,
-  gradingService: null,
-  gradingFee: null,
-  shippingAddress: null,
-  shippingMethod: null,
-  shippingPaymentAccount: null,
-  shippingCost: null,
+  itemType: undefined,
+  cardAmount: undefined,
+  totalValue: undefined,
+  gradingService: undefined,
+  gradingFee: undefined,
+  shippingAddress: undefined,
+  shippingMethod: undefined,
+  shippingPaymentAccount: undefined,
+  shippingCost: undefined,
   showDiv1: false,
   showDiv2: false
 }
@@ -28,14 +28,14 @@ const submissionSlice = createSlice({
     goPrevStep(state) {
       state.currentStep -= 1
     },
-    updateItemType(state, action: PayloadAction<{itemType : ItemType}>) {
+    updateItemType(state, action: PayloadAction<{ itemType: ItemType }>) {
       state.itemType = action.payload.itemType
     },
-    updateItems(state, action: PayloadAction<{cardAmount: number, totalValue: number}>) {
+    updateItems(state, action: PayloadAction<{ cardAmount: number; totalValue: number }>) {
       state.cardAmount = action.payload.cardAmount
       state.totalValue = action.payload.totalValue
     },
-    updateService(state, action: PayloadAction<{serviceLevel: ServiceLevelType, gradingFee: number}>) {
+    updateService(state, action: PayloadAction<{ serviceLevel: ServiceLevelType; gradingFee: number }>) {
       state.gradingService = action.payload.serviceLevel
       state.gradingFee = action.payload.gradingFee
     },
@@ -43,7 +43,7 @@ const submissionSlice = createSlice({
       state.showDiv1 = true
       state.shippingAddress = action.payload.address
     },
-    updateShippingMethod(state, action: PayloadAction<{ method: string, price: number }>) {
+    updateShippingMethod(state, action: PayloadAction<{ method: string; price: number }>) {
       state.showDiv1 = true
       state.shippingMethod = action.payload.method
       state.shippingCost = action.payload.price
@@ -56,22 +56,33 @@ const submissionSlice = createSlice({
       state.showDiv2 = true
     },
     clear(state) {
-      state = {...state, ...initialState }
+      state.currentStep = 0
+      state.itemType = undefined
+      state.cardAmount = undefined
+      state.totalValue = undefined
+      state.gradingService = undefined
+      state.gradingFee = undefined
+      state.shippingAddress = undefined
+      state.shippingMethod = undefined
+      state.shippingPaymentAccount = undefined
+      state.shippingCost = undefined
+      state.showDiv1 = false
+      state.showDiv2 = false
     }
   }
 })
 
 export default submissionSlice.reducer
 
-export const { 
-  goNextStep, 
-  goPrevStep, 
-  updateItemType, 
+export const {
+  goNextStep,
+  goPrevStep,
+  updateItemType,
   updateItems,
-  updateService, 
-  updateShippingAddress, 
-  updateShippingMethod, 
+  updateService,
+  updateShippingAddress,
+  updateShippingMethod,
   updateShippingPaymentAccount,
   showSummary,
-  clear 
+  clear
 } = submissionSlice.actions

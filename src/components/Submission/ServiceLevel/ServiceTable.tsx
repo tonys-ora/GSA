@@ -1,10 +1,9 @@
-import React from 'react'
-import { styled, Stack, Typography, Box } from '@mui/material';
+import { Box, Stack, styled, Typography } from '@mui/material'
 
-import { Services } from '@/constants';
-import { useSummary } from '@/hooks';
+import { Services } from '@/constants'
+import { useSummary } from '@/hooks'
 
-import RadioService from './RadioService';
+import RadioService from './RadioService'
 
 const HeaderText = styled(Typography)({
   WebkitBackgroundClip: 'text',
@@ -13,7 +12,7 @@ const HeaderText = styled(Typography)({
   lineHeight: '20px',
   color: '#797979',
   alignContent: 'center'
-});
+})
 
 export function ServiceTable() {
   const summary = useSummary()
@@ -21,12 +20,13 @@ export function ServiceTable() {
   console.log(summary)
 
   return (
-    <Stack 
+    <Stack
       sx={{
         gap: '8px'
       }}
-      >
-      <Stack direction={'row'}
+    >
+      <Stack
+        direction={'row'}
         sx={{
           bgcolor: '#F3F3F3',
           padding: '0 16px 0 32px',
@@ -34,32 +34,30 @@ export function ServiceTable() {
           justifyContent: 'space-between',
           gap: '8px'
         }}
-        >
+      >
         <Box flexGrow={1} textAlign={'center'}>
           <HeaderText>Service Level</HeaderText>
         </Box>
-        <Box  width={100} textAlign={'center'}>
-        <HeaderText>Min cards/sub</HeaderText>
+        <Box width={100} textAlign={'center'}>
+          <HeaderText>Min cards/sub</HeaderText>
         </Box>
-        <Box  width={100} textAlign={'center'}>
-        <HeaderText>Turnaround</HeaderText>
+        <Box width={100} textAlign={'center'}>
+          <HeaderText>Turnaround</HeaderText>
         </Box>
         <Box width={60} textAlign={'center'}>
-        <HeaderText>Price</HeaderText>
+          <HeaderText>Price</HeaderText>
         </Box>
       </Stack>
-      
-      {
-        Services.map((val) => (
-          <RadioService 
-            key={val.level} 
-            {...val} 
-            checked={val.level === summary.gradingService}
-          />
-        ))
-      }
+
+      {Services.map(val => (
+        <RadioService key={val.level} {...val} checked={val.level === summary.gradingService} />
+      ))}
       <Typography variant='body1' color='gray' component='span'>
-        Join <Box component='span' color='#E24744'>membership & points program</Box> for more benefits
+        Join{' '}
+        <Box component='span' color='#E24744'>
+          membership & points program
+        </Box>{' '}
+        for more benefits
       </Typography>
     </Stack>
   )

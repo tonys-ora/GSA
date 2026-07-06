@@ -14,7 +14,7 @@ export const MainContent = styled(SimpleBar, {
   width: '100%',
   marginTop: '72px',
   height: 'calc(100vh - 72px - 51px)',
-  marginBottom: isMobile ? theme.spacing(7) : '51px',
+  marginBottom: isMobile ? theme.spacing(7) : '51px'
 
   // [theme.breakpoints.up('md')]: {
   //   marginTop: '83px',

@@ -1,10 +1,9 @@
-import React from 'react'
-import { Button, Stack, Typography} from '@mui/material'
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from '@mui/icons-material/Add'
+import { Button, Stack, Typography } from '@mui/material'
 
 import { shippingAddresses } from '@/constants'
-import RadioAddress from './RadioAddress'
 import { useSummary } from '@/hooks'
+import RadioAddress from './RadioAddress'
 
 export default function ShippingAddresses() {
   const summary = useSummary()
@@ -13,14 +12,12 @@ export default function ShippingAddresses() {
     <Stack gap={'16px'}>
       <Typography variant='subtitle1'>Select Shipping Address</Typography>
       <Stack gap={'8px'}>
-        {
-          shippingAddresses.map((val) => (
-            <RadioAddress key={val.address} {...val} checked={val.address === summary.shippingAddress} />
-          ))
-        }
-        <Button 
-          variant='contained' 
-          sx={{bgcolor: '#F1F1F1', color: 'black', borderRadius: '8px'}}
+        {shippingAddresses.map(val => (
+          <RadioAddress key={val.address} {...val} checked={val.address === summary.shippingAddress} />
+        ))}
+        <Button
+          variant='contained'
+          sx={{ bgcolor: '#F1F1F1', color: 'black', borderRadius: '8px' }}
           startIcon={<AddIcon />}
         >
           <Typography variant='body1' lineHeight='20px'>

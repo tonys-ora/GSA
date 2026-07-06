@@ -15,14 +15,13 @@ export const HeaderContainer = styled('header', {
   background: colors.white,
   borderBottom: `1px solid ${colors.border}`,
   width: '100%',
-  
+
   [theme.breakpoints.up('sm')]: {
-    maxWidth: '100%',
+    maxWidth: '100%'
   },
 
   [theme.breakpoints.up('md')]: {
-    maxWidth: '100%',
-    
+    maxWidth: '100%'
   },
 
   ...theme.applyStyles('dark', {

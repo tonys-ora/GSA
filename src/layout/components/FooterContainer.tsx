@@ -15,17 +15,16 @@ export const FooterContainer = styled('footer', {
   background: colors.white,
   width: '100%',
   bottom: 0,
-  
+
   [theme.breakpoints.up('sm')]: {
-    maxWidth: '100%',
+    maxWidth: '100%'
   },
 
   [theme.breakpoints.up('md')]: {
-    maxWidth: '100%',
-    
+    maxWidth: '100%'
   },
 
   ...theme.applyStyles('dark', {
-    background: colors.bgDark,
+    background: colors.bgDark
   })
 }))

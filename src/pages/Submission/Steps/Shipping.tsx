@@ -1,14 +1,13 @@
-import React, { useCallback } from 'react'
-import { Stack, Typography, Button, Divider} from '@mui/material'
+import { Button, Divider, Stack, Typography } from '@mui/material'
+import { useCallback } from 'react'
 
 import ShippingAddresses from '@/components/Submission/Shipping/ShippingAddresses'
 import ShippingMethods from '@/components/Submission/Shipping/ShippingMethods'
 import ShippingPaymentAccount from '@/components/Submission/Shipping/ShippingPaymentAccount'
-import { goNextStep, goPrevStep, dispatch } from '@/store'
 import { useSummary } from '@/hooks'
+import { dispatch, goNextStep, goPrevStep } from '@/store'
 
 export default function Shipping() {
-  
   const summary = useSummary()
 
   const handleContinue = useCallback(() => {
@@ -20,11 +19,8 @@ export default function Shipping() {
 
   return (
     <Stack gap={'24px'}>
-
       <Stack gap={'4px'}>
-        <Typography variant='h6'>
-          Return Shipping
-        </Typography>
+        <Typography variant='h6'>Return Shipping</Typography>
         <Typography variant='body1' color='grey'>
           Complete your submission by providing shipment
         </Typography>
@@ -37,33 +33,22 @@ export default function Shipping() {
       <Divider />
       <ShippingPaymentAccount />
 
-
-    {/* buttons */}
+      {/* buttons */}
       <Stack direction='row' justifyContent={'space-between'}>
-        <Button 
-          color='secondary' 
-          variant='contained' 
-          sx={{padding: '10px 24px'}}
-          onClick={handleBack}
-        >
-          <Typography variant='body2'>
-            Back
-          </Typography>
+        <Button color='secondary' variant='contained' sx={{ padding: '10px 24px' }} onClick={handleBack}>
+          <Typography variant='body2'>Back</Typography>
         </Button>
 
-        <Button 
-          color='primary' 
-          variant='contained' 
-          sx={{padding: '10px 24px'}}
+        <Button
+          color='primary'
+          variant='contained'
+          sx={{ padding: '10px 24px' }}
           onClick={handleContinue}
           disabled={!summary.shippingAddress || !summary.shippingMethod || !summary.shippingPaymentAccount}
         >
-          <Typography variant='body2'>
-            Proceed to Checkout
-          </Typography>
+          <Typography variant='body2'>Proceed to Checkout</Typography>
         </Button>
       </Stack>
-
     </Stack>
   )
 }

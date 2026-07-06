@@ -1,25 +1,11 @@
-import { chipClasses } from '@mui/material/Chip'
-import { dividerClasses } from '@mui/material/Divider'
-import { iconButtonClasses } from '@mui/material/IconButton'
-import { menuItemClasses } from '@mui/material/MenuItem'
-import { outlinedInputClasses } from '@mui/material/OutlinedInput'
-import { selectClasses } from '@mui/material/Select'
-import { svgIconClasses } from '@mui/material/SvgIcon'
-import { tabClasses } from '@mui/material/Tab'
-import { toggleButtonClasses } from '@mui/material/ToggleButton'
-import { toggleButtonGroupClasses } from '@mui/material/ToggleButtonGroup'
 import { Components, Theme, alpha } from '@mui/material/styles'
 
-import { hexToRgba } from '@/utils'
-
-import AppIcon from '@/components/Core/AppIcon'
-
-import { brand, colors, gray, red } from '../themePrimitives'
+import { colors, gray } from '../themePrimitives'
 
 export const customizations: Components<Theme> = {
   MuiContainer: {
     styleOverrides: {
-      root: ({theme}) => ({
+      root: ({ theme }) => ({
         maxWidth: '1140px',
         padding: '16px 0px !important'
       })
@@ -29,13 +15,13 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: {
         boxSizing: 'border-box',
-        transition: 'all 100ms ease-in',
+        transition: 'all 100ms ease-in'
       }
     }
   },
   MuiButton: {
     styleOverrides: {
-      root: ({theme}) => ({
+      root: ({ theme }) => ({
         boxShadow: 'none',
         borderRadius: theme.shape.borderRadius,
         textTransform: 'none',
@@ -99,7 +85,7 @@ export const customizations: Components<Theme> = {
               padding: '8px',
               minWidth: 'auto'
             }
-          },
+          }
         ]
       })
     }
@@ -221,8 +207,8 @@ export const customizations: Components<Theme> = {
           backgroundColor: '#E2474414',
           border: `1px solid ${colors.red}`,
           '&:hover': {
-            backgroundColor: '#E2474414',
-          },
+            backgroundColor: '#E2474414'
+          }
         }
       }
     }
@@ -231,8 +217,8 @@ export const customizations: Components<Theme> = {
     styleOverrides: {
       root: {
         '& .MuiSvgIcon-root': {
-          fontSize: '18px', // Sets the radio circle/dot to 20px
-        },
+          fontSize: '18px' // Sets the radio circle/dot to 20px
+        }
       }
     }
   }

@@ -5,7 +5,7 @@ import auth from './auth'
 import submission from './submission'
 
 const reducer = combineReducers({
-  auth, 
+  auth,
   submission
 })
 

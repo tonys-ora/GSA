@@ -21,12 +21,12 @@ const queryClient = new QueryClient({
 
 export default function App() {
   return (
-      <QueryClientProvider client={queryClient}>
-        <DialogProvider>
-          <RouterProvider router={routes} />
-          <ThemedToastContainer />
-          {/* <Dialogs /> */}
-        </DialogProvider>
-      </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <DialogProvider>
+        <RouterProvider router={routes} />
+        <ThemedToastContainer />
+        {/* <Dialogs /> */}
+      </DialogProvider>
+    </QueryClientProvider>
   )
 }

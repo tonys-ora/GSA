@@ -176,14 +176,14 @@ export const colorSchemes = {
   light: {
     palette: {
       primary: {
-        light:  '#FBFBFB',
+        light: '#FBFBFB',
         main: colors.red,
         dark: brand[700],
         contrastText: colors.red
       },
       secondary: {
-        main: colors.greyLight 
-      }, 
+        main: colors.greyLight
+      },
       info: {
         light: brand[100],
         main: brand[300],
@@ -333,7 +333,7 @@ export const typography = {
   },
   body2: {
     fontSize: defaultTheme.typography.pxToRem(14),
-    fontWeight: 400 
+    fontWeight: 400
   },
   caption: {
     fontSize: defaultTheme.typography.pxToRem(12),

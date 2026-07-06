@@ -6,7 +6,7 @@ const initialState: AuthState = {
   isLoggedIn: false,
   chatRoomOpen: false,
   user: null,
-  token: null,
+  token: null
 }
 
 const authSlice = createSlice({
@@ -17,7 +17,6 @@ const authSlice = createSlice({
       state.isLoggedIn = true
       state.user = action.payload.user
       state.token = action.payload.token
-      
     },
     logout(state) {
       state.isLoggedIn = false

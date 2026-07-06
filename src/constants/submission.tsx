@@ -1,21 +1,21 @@
-import GardingType from '@/pages/Submission/Steps/GardingType'
 import AddItems from '@/pages/Submission/Steps/AddItems'
-import ServiceLevel from '@/pages/Submission/Steps/ServiceLevel'
-import Shipping from '@/pages/Submission/Steps/Shipping'
 import Billing from '@/pages/Submission/Steps/Billing'
 import Confirmation from '@/pages/Submission/Steps/Confirmation'
+import GardingType from '@/pages/Submission/Steps/GardingType'
+import ServiceLevel from '@/pages/Submission/Steps/ServiceLevel'
+import Shipping from '@/pages/Submission/Steps/Shipping'
 
 import card1 from '@/assets/images/card1.png'
 import card2 from '@/assets/images/card2.png'
 import image1 from '@/assets/images/image 1782.png'
 import image2 from '@/assets/images/image 1783.png'
 
-import { AddressType, ServiceType, RadioItemType, MethodType, PaymentAccountType } from '@/types/Submission'
+import { AddressType, MethodType, PaymentAccountType, RadioItemType, ServiceType } from '@/types/Submission'
 
 export const Submissions = [
-  <GardingType />, 
-  <AddItems />, 
-  <ServiceLevel />, 
+  <GardingType />,
+  <AddItems />,
+  <ServiceLevel />,
   <Shipping />,
   <Billing />,
   <Confirmation />
@@ -60,8 +60,8 @@ export const steps = [
   {
     id: 5,
     title: 'Confirmation'
-  },
-];
+  }
+]
 
 export const itemTypes: RadioItemType[] = [
   {
@@ -102,7 +102,7 @@ export const serviceTableHeader = [
   {
     title: 'Price',
     width: '60px'
-  },
+  }
 ]
 
 export const Services: ServiceType[] = [
@@ -148,8 +148,7 @@ export const shippingAddresses: AddressType[] = [
     address: 'Street geroge 23T',
     detail: 'California, Sacramentto, 093823, United States',
     phone: '+1 0921 3812'
-  },
-  
+  }
 ]
 export const shippingMethods: MethodType[] = [
   {
@@ -161,20 +160,18 @@ export const shippingMethods: MethodType[] = [
     url: image2,
     method: 'Fedex Ground (oversized)',
     price: 30
-  },
+  }
 ]
 export const shippingPaymentAccounts: PaymentAccountType[] = [
   {
     title: 'SGC Shipping & Handling',
-    isInput: false,
+    isInput: false
   },
   {
     title: 'Fedex Ground (oversized)',
-    isInput: true,
-  },
-  
+    isInput: true
+  }
 ]
-
 
 export const SummaryConst = {
   currentStep: {
@@ -185,11 +182,11 @@ export const SummaryConst = {
     title: 'Grading type',
     prefix: ''
   },
-  cardAmount : {
+  cardAmount: {
     title: 'Card amount',
     prefix: ''
   },
-  totalValue : {
+  totalValue: {
     title: 'Total decl. value',
     prefix: '$'
   },

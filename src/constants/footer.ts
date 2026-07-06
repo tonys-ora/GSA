@@ -1,7 +1,6 @@
-
 type FooterTitle = 'Terms of Use' | 'Privacy' | 'Contact' | 'Cookie' | 'Preferences'
 
-export type Footer = Array<{title: FooterTitle, link: string}>
+export type Footer = Array<{ title: FooterTitle; link: string }>
 
 export const footerList: Footer = [
   {

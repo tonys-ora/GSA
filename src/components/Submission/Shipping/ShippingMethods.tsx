@@ -1,5 +1,4 @@
-import React from 'react'
-import { Stack, Typography} from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 
 import { shippingMethods } from '@/constants'
 import { useSummary } from '@/hooks'
@@ -13,11 +12,9 @@ export default function ShippingMethods() {
     <Stack gap={'16px'}>
       <Typography variant='subtitle1'>Select Shipping Method</Typography>
       <Stack gap={'8px'} direction='row'>
-        {
-          shippingMethods.map((val) => (
-            <RadioMethod key={val.method} {...val} checked = {summary.shippingMethod === val.method}/>
-          ))
-        }
+        {shippingMethods.map(val => (
+          <RadioMethod key={val.method} {...val} checked={summary.shippingMethod === val.method} />
+        ))}
       </Stack>
     </Stack>
   )
